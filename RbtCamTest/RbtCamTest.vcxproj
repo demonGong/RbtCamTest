@@ -113,6 +113,7 @@
     <ClInclude Include="FreeDriveButton.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="Matrix.h" />
+    <ClInclude Include="MyCamTestAccu.h" />
     <ClInclude Include="RbtCamTest.h" />
     <ClInclude Include="RbtCamTestDoc.h" />
     <ClInclude Include="RbtCamTestView.h" />
@@ -129,6 +130,7 @@
     <ClCompile Include="FreeDriveButton.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="MyCamTestAccu.cpp" />
     <ClCompile Include="RbtCamTest.cpp" />
     <ClCompile Include="RbtCamTestDoc.cpp" />
     <ClCompile Include="RbtCamTestView.cpp" />

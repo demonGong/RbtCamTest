@@ -2,6 +2,7 @@
 
 #include "RegisterRbt.h"
 #include "ComTest.h"
+#include "MyCamTestAccu.h"
 #include "FreeDriveButton.h"
 // ComTestView form view
 
@@ -44,6 +45,7 @@ public:
 	CPropertySheet m_sheet;
 	CRegisterRbt m_page1;
 	CComTest m_page2;
+	CMyCamTestAccu m_page3;
 	CFreeDriveButton m_btFreeDrive;
 
 private:

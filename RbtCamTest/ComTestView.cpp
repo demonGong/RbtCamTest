@@ -37,6 +37,7 @@ void ComTestView::OnInitialUpdate()
 	static BOOL m_bFirstRun = TRUE;
 	m_sheet.AddPage(&m_page1);   
 	m_sheet.AddPage(&m_page2);
+	m_sheet.AddPage(&m_page3);
 	m_sheet.Create(this,   WS_CHILD|WS_VISIBLE|WS_TABSTOP,   0);   
 	m_sheet.SetWindowPos(NULL,0,0,400,410,NULL);
 

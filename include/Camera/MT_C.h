@@ -104,6 +104,9 @@ public:
 	//返回：void
 	void getAllAdditionPointsPos(const char *filePath, const char *markerName, vector<double> &pointsInMarker, vector<double> &pointsInCamera);
 
+	//得到图像上所有Xpoint的坐标
+	void getAllKeyPointsPos(vector<vector<double>> &keyPoints, int XpointsNum);
+
 	//vector释放内存,可以使用模板函数
 	void  deleteVectors();
 //私有成员变量

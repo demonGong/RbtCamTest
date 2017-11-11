@@ -2431,6 +2431,46 @@ void CMT_C::getAllAdditionPointsPos(const char *filePath, const char *markerName
 	delete m2c;
 	delete markersCollection;
 }
+//得到图像上所有Xpoint的坐标
+void CMT_C::getAllKeyPointsPos(vector<vector<double >> &keyPoints, int XpointsNum)
+{
+	this->pXPoints->processFrame(this->pCurrCam);
+	MTCollection::Collection* xpointsCollection = new MTCollection::Collection(this->pXPoints->detectedXPoints(this->pCurrCam));
+
+	XpointsNum = xpointsCollection->count();
+
+	if (xpointsCollection->count() == 0) {
+		delete xpointsCollection;
+		return;
+	}
+
+
+	double x3, y3, z3;
+	//double x[2], y[2];
+	int XPNum = 1;
+	MTXPoint* XP;
+	double radius = 5;
+	// here we need the left side presentation: coordinates in sensor space, distances etc	
+	Xform3D* Marker2CurrCameraXf = NULL;
+	
+	for (XPNum = 1; XPNum <= xpointsCollection->count(); XPNum++)
+	{
+		XP = new MTXPoint(xpointsCollection->itemI(XPNum));
+		//XP->Position2D(&x[0], &y[0], &x[1], &y[1], &x[2], &y[2]);
+		XP->Position3D(&x3, &y3, &z3);
+		//XP->setIndex(XPNum);
+		vector<double> m_point;
+		m_point.push_back(x3);
+		m_point.push_back(y3);
+		m_point.push_back(z3);
+
+		keyPoints.push_back(m_point);
+		
+	}
+
+	delete xpointsCollection;
+
+}
 
 //释放vector内存
 void  CMT_C::deleteVectors()
